@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import About from "./About";
 import Footer from "./Footer";
 import Header from "./Header";
@@ -9,7 +9,7 @@ import NewPost from "./NewPost";
 import Post from "./Post";
 import PostLayout from "./PostLayout";
 import PostPage from "./PostPage";
-import { Routes, Route, Link } from "react-router-dom";
+import { Routes, Route, Link, useNavigate } from "react-router-dom";
 import { format } from "date-fns";
 
 function App() {
@@ -43,6 +43,15 @@ function App() {
   const [searchResults, setSearchResults] = useState([]);
   const [postTitle, setPostTitle] = useState("");
   const [postBody, setPostBody] = useState(" ");
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const filteredResults = posts.filter((post) => {
+      post.body.toLowerCase().includes(search.toLowerCase()) ||
+        post.title.toLowerCase().includes(search.toLowerCase());
+    });
+    setSearchResults(filteredResults.reverse());
+  }, [posts, search]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -53,17 +62,42 @@ function App() {
     setPosts(allPosts);
     setPostTitle("");
     setPostBody("");
+    navigate("/");
+  };
+
+  const handleDelete = (id) => {
+    const postsList = posts.filter((post) => post.id !== id);
+    setPosts(postsList);
+    navigate("/");
   };
 
   return (
     <div className="App">
       <Header title="MySpace Social Media" />
       <Nav search={search} setSearch={setSearch} />
-      <Home posts={posts} />
-      <NewPost />
-      <PostPage />
-      <About />
-      <Missing />
+      <Routes>
+        <Route path="/" element={<Home posts={posts} />} />
+        <Route path="post">
+          <Route
+            index
+            element={
+              <NewPost
+                handleSubmit={handleSubmit}
+                postTitle={postTitle}
+                setPostTitle={setPostTitle}
+                postBody={postBody}
+                setPostBody={setPostBody}
+              />
+            }
+          />
+          <Route
+            path=":id"
+            element={<PostPage posts={posts} handleDelete={handleDelete} />}
+          />
+        </Route>
+        <Route path="about" element={<About />} />
+        <Route path="*" element={<Missing />} />
+      </Routes>
       <Footer />
     </div>
   );
