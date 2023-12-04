@@ -12,6 +12,7 @@ import PostPage from "./PostPage";
 import { Routes, Route, Link, useNavigate } from "react-router-dom";
 import { format } from "date-fns";
 import api from "./api/Posts";
+import EditPost from "./EditPost";
 
 function App() {
   const [posts, setPosts] = useState([]);
@@ -126,11 +127,31 @@ function App() {
               />
             }
           />
+
           <Route
             path=":id"
-            element={<PostPage posts={posts} handleDelete={handleDelete} />}
+            element={
+              <PostPage
+                posts={posts}
+                handleDelete={handleDelete}
+                handleEdit={handleEdit}
+              />
+            }
           />
         </Route>
+        <Route
+          path="/edit/:id"
+          element={
+            <EditPost
+              posts={posts}
+              handleEdit={handleEdit}
+              editBody={editBody}
+              setEditBody={setEditBody}
+              editTitle={editTitle}
+              setEditTitle={setEditTitle}
+            />
+          }
+        />
         <Route path="about" element={<About />} />
         <Route path="*" element={<Missing />} />
       </Routes>
