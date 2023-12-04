@@ -1,0 +1,28 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "1st post",
+      "datetime": "July 16th,2021 11:47:39 AM",
+      "body": "Good morning,Have a nice day"
+    },
+    {
+      "id": 2,
+      "title": "2nd post",
+      "datetime": "July 17th,2021 11:47:39 AM",
+      "body": "Good Noon,Have a nice day"
+    },
+    {
+      "id": 3,
+      "title": "3rd post",
+      "datetime": "July 18th,2021 11:47:39 AM",
+      "body": "Good evening,Have a nice day"
+    },
+    {
+      "id": 4,
+      "title": "4th post",
+      "datetime": "July 19th,2021 11:47:39 AM",
+      "body": "Good night,sweet dreams"
+    }
+  ]
+}
