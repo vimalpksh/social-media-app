@@ -1,12 +1,6 @@
 {
   "posts": [
     {
-      "id": 2,
-      "title": "2nd post today",
-      "datetime": "December 05, 2023 12:27:03 AM",
-      "body": "Good Noon,Have a nice daysssss people"
-    },
-    {
       "id": 3,
       "title": "3rd post",
       "datetime": "July 18th,2021 11:47:39 AM",
@@ -23,6 +17,12 @@
       "title": "hi",
       "datetime": "December 04, 2023 11:15:59 PM",
       "body": " subs\n"
+    },
+    {
+      "id": 6,
+      "title": "Congratulations",
+      "datetime": "December 05, 2023 10:13:18 PM",
+      "body": " You have completed the social media project website using React JS. "
     }
   ]
 }
