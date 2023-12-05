@@ -13,6 +13,7 @@ import { Routes, Route, Link, useNavigate } from "react-router-dom";
 import { format } from "date-fns";
 import api from "./api/Posts";
 import EditPost from "./EditPost";
+import useWindowSize from "./hooks/useWindowSize";
 
 function App() {
   const [posts, setPosts] = useState([]);
@@ -23,6 +24,7 @@ function App() {
   const [editTitle, setEditTitle] = useState("");
   const [editBody, setEditBody] = useState(" ");
   const navigate = useNavigate();
+  const { width } = useWindowSize();
 
   useEffect(() => {
     const fetchItems = async () => {
@@ -110,7 +112,7 @@ function App() {
 
   return (
     <div className="App">
-      <Header title="MySpace Social Media" />
+      <Header title="MySpace Social Media" width={width} />
       <Nav search={search} setSearch={setSearch} />
       <Routes>
         <Route path="/" element={<Home posts={posts} />} />
