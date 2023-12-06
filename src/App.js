@@ -21,7 +21,7 @@ function App() {
   return (
     <div className="App">
       <DataProvider>
-        <Header title="MySpace Social Media" />
+        <Header title="Spaces Social Media" />
         <Nav />
         <Routes>
           <Route path="/" element={<Home />} />

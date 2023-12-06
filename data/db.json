@@ -1,28 +1,28 @@
 {
   "posts": [
     {
-      "id": 3,
-      "title": "3rd post",
-      "datetime": "July 18th,2021 11:47:39 AM",
-      "body": "Good evening,Have a nice day"
-    },
-    {
-      "id": 4,
-      "title": "4th post",
-      "datetime": "July 19th,2021 11:47:39 AM",
-      "body": "Good night,sweet dreams"
-    },
-    {
-      "id": 5,
-      "title": "hi",
-      "datetime": "December 04, 2023 11:15:59 PM",
-      "body": " subs\n"
-    },
-    {
       "id": 6,
       "title": "Congratulations",
       "datetime": "December 05, 2023 10:13:18 PM",
       "body": " You have completed the social media project website using React JS. "
+    },
+    {
+      "id": 7,
+      "title": "Good morning",
+      "datetime": "December 05, 2023 10:15:48 PM",
+      "body": "Today I went for shopping with family. "
+    },
+    {
+      "id": 8,
+      "title": "Weekend Party",
+      "datetime": "December 05, 2023 10:16:20 PM",
+      "body": "My brother has invited me to party this evening! "
+    },
+    {
+      "id": 9,
+      "title": "Stay Hydrated",
+      "datetime": "December 05, 2023 10:16:43 PM",
+      "body": "Drinking more water helps you to stay hydrated. "
     }
   ]
 }
